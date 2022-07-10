@@ -6,6 +6,9 @@
 super + Return
 	kitty
 
+super + shift + Return
+	kitty --class floatterminal
+
 # program launcher
 super + @space
 	rofi -show drun
