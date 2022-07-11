@@ -27,4 +27,13 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = true,
   },
+  autotag = {
+    enable = true,
+  },
+  rainbow = {
+    enable = true,
+    -- disable = {'language you want disabled'}
+    extended_mode = true,
+    max_file_lines = nil,
+  },
 }

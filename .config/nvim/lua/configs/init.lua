@@ -13,6 +13,7 @@ o.termguicolors = true
 o.splitright = true
 o.showmode = false
 o.scrolloff = 5
+o.timeoutlen = 500
 
 -- tab ident configuration
 o.expandtab = true
@@ -22,7 +23,7 @@ o.softtabstop = 4
 o.showtabline = 2
 
 -- search configuration
-o.hlsearch = true
+o.hlsearch = false
 o.ignorecase = true
 o.smartcase = true
 
