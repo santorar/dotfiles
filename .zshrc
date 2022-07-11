@@ -97,6 +97,8 @@ alias pf="pfetch"
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# tmux attach
+alias ta='tmux attach'
 # yt-dlp
 
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
