@@ -210,6 +210,16 @@ keys = [
         lazy.window.toggle_fullscreen(),
         desc="toggle fullscreen on a window"
         ),
+    # take a fullscreen screenshot
+    Key([mod], "a",
+        lazy.spawn("flameshot full"),
+        desc="take a fullscreen screenshot",
+        ),
+    # take a selection screenshot
+    Key([mod, "shift"], "a",
+        lazy.spawn("flameshot gui"),
+        desc="launch the interface for take a screenshot",
+        ),
 ]
 
 # groups = [Group(i) for i in "123456789"]
