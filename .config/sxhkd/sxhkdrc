@@ -23,11 +23,11 @@ super + e
 
 # take a screenshot
 super + shift + a
-  scrot -s /home/santorar/Pictures/Screenshots/screen -e 'xclip -selection clipboard -t image/png -i $f'
+    flameshot gui
 
 # take a full screenshot
 super + a
-  scrot /home/santorar/Pictures/Screenshots/screen -e 'xclip -selection clipboard -t image/png -i $f'
+    flameshot full
 
 # opens brave
 super + b
