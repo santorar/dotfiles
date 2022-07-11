@@ -1,9 +1,0 @@
-#!/bin/env bash
-/home/santorar/.screenlayout/screen.sh &
-/home/santorar/inicio.sh &
-sleep 1
-nitrogen --restore &
-picom &
-parcellite &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-setxkbmap -model pc104 -layout us -variant altgr-intl &
