@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget,hook
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -38,11 +38,11 @@ explorer = "nemo"
 POWERLINE_SYMBOL = "\ue0ba"
 
 COLORS = {
-        "black" : "#17070a",
-        "white" : "#D9E0EE",
-        "purple" : "#F28FAD",
-        "yellow" : "#FAE3B0",
-        "pink" : "#96CDFB",
+        "black": "#17070a",
+        "white": "#D9E0EE",
+        "purple": "#F28FAD",
+        "yellow": "#FAE3B0",
+        "pink": "#96CDFB",
         }
 
 
@@ -50,90 +50,183 @@ keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod, "shift"], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "h",
+        lazy.layout.left(),
+        desc="Move focus to left"
+        ),
+    Key([mod], "l",
+        lazy.layout.right(),
+        desc="Move focus to right"
+        ),
+    Key([mod], "j",
+        lazy.layout.down(),
+        desc="Move focus down"
+        ),
+    Key([mod], "k",
+        lazy.layout.up(),
+        desc="Move focus up"
+        ),
+    Key([mod, "shift"], "space",
+        lazy.layout.next(),
+        desc="Move window focus to other window"
+        ),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    Key([mod, "shift"], "h",
+        lazy.layout.shuffle_left(),
+        desc="Move window to the left"
+        ),
+    Key([mod, "shift"], "l",
+        lazy.layout.shuffle_right(),
+        desc="Move window to the right"
+        ),
+    Key([mod, "shift"], "j",
+        lazy.layout.shuffle_down(),
+        desc="Move window down"
+        ),
+    Key([mod, "shift"], "k",
+        lazy.layout.shuffle_up(),
+        desc="Move window up"
+        ),
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "h",
+        lazy.layout.grow_left(),
+        desc="Grow window to the left"
+        ),
+    Key([mod, "control"], "l",
+        lazy.layout.grow_right(),
+        desc="Grow window to the right"
+        ),
+    Key([mod, "control"], "j",
+        lazy.layout.grow_down(),
+        desc="Grow window down"
+        ),
+    Key([mod, "control"], "k",
+        lazy.layout.grow_up(),
+        desc="Grow window up"
+        ),
+    Key([mod], "n",
+        lazy.layout.normalize(),
+        desc="Reset all window sizes"
+        ),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key(
-        [mod, "shift"],
+    Key([mod, "shift"],
         "Return",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
-    ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+        ),
+    Key([mod], "Return",
+        lazy.spawn(terminal),
+        desc="Launch terminal"
+        ),
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod], "e", lazy.spawn(explorer), desc="Launch explorer"),
-    Key([mod], "space", lazy.spawn("rofi -show drun"), desc="Launch rofi"),
-    Key([mod], "c", lazy.spawn("gnome-calculator"), desc="Launch a calculator"),
-    Key([mod, "shift","control"], "l", lazy.spawn("i3lock-fancy"), desc="Locks the screen"),
-
-
-    # ------------ Hardware Configs ------------
+    Key([mod], "Tab",
+        lazy.next_layout(),
+        desc="Toggle between layouts"
+        ),
+    Key([mod], "q",
+        lazy.window.kill(),
+        desc="Kill focused window"
+        ),
+    Key([mod, "control"], "r",
+        lazy.reload_config(),
+        desc="Reload the config"
+        ),
+    Key([mod, "control"], "q",
+        lazy.shutdown(),
+        desc="Shutdown Qtile"
+        ),
+    Key([mod], "r",
+        lazy.spawncmd(),
+        desc="Spawn a command using a prompt widget"
+        ),
+    Key([mod], "b",
+        lazy.spawn(browser),
+        desc="Launch browser"
+        ),
+    Key([mod], "e",
+        lazy.spawn(explorer),
+        desc="Launch explorer"
+        ),
+    Key([mod], "space",
+        lazy.spawn("rofi -show drun"),
+        desc="Launch rofi"
+        ),
+    Key([mod], "c",
+        lazy.spawn("gnome-calculator"),
+        desc="Launch a calculator"
+        ),
+    Key([mod, "shift", "control"], "l",
+        lazy.spawn("i3lock-fancy"),
+        desc="Locks the screen"
+        ),
 
     # Volume
-    Key([], "XF86AudioLowerVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-    )),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-    )),
-    Key([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    )),
+    Key([], "XF86AudioLowerVolume",
+        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
+        desc="-5% of volume"),
+    Key([], "XF86AudioRaiseVolume",
+        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
+        desc="5% of volume",
+        ),
+    Key([], "XF86AudioMute",
+        lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle"),
+        desc="mute the audio"
+        ),
 
     # Brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    Key([], "XF86MonBrightnessUp",
+        lazy.spawn("brightnessctl set +10%"),
+        desc="10% brightness"
+        ),
+    Key([], "XF86MonBrightnessDown",
+        lazy.spawn("brightnessctl set 10%-"),
+        desc="-10% brightness"
+        ),
 
-    #switch monitors
-    Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
-    Key([mod], "comma", lazy.prev_screen(), desc="Move focus to previous monitor"),
+    # switch monitors
+    Key([mod], "period",
+        lazy.next_screen(),
+        desc="Move focus to next monitor"
+        ),
+    Key([mod], "comma",
+        lazy.prev_screen(),
+        desc="Move focus to previous monitor"
+        ),
 
-    #tile and foat windows
-    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="toggle floating on a window"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="toggle fullscreen on a window"),
+    # fullscreen and float windows
+    Key([mod, "shift"], "f",
+        lazy.window.toggle_floating(),
+        desc="toggle floating on a window"
+        ),
+    Key([mod], "f",
+        lazy.window.toggle_fullscreen(),
+        desc="toggle fullscreen on a window"
+        ),
 ]
 
-#groups = [Group(i) for i in "123456789"]
+# groups = [Group(i) for i in "123456789"]
 
-def longNameParse(text): 
-    for string in ["NVIM","Brave","Google Chrome", "Firefox"]: 
+
+def longNameParse(text):
+    for string in ["NVIM", "Brave", "Google Chrome", "Firefox"]:
         if string in text:
             text = string
         else:
             text = text
     return text
 
+
 groups = [
         Group(name, **kwargs)
-        for name, kwargs in[
+        for name, kwargs in [
             ("일", {"matches": [Match(wm_class=["firefox"])]}),
             ("이", {}),
             ("삼", {}),
@@ -148,18 +241,14 @@ groups = [
 for i, group in enumerate(groups, 1):
     keys.extend(
         [
-            ###
-            ### Switch between workspaces
-            ###
+            # Switch between workspaces
             Key(
                 [mod],
                 str(i if i != 10 else 0),
                 lazy.group[group.name].toscreen(toggle=False),
                 desc=f"Switch to group {group.name}",
             ),
-            ###
-            ### Move focused window to workspace
-            ###
+            # Move focused window to workspace
             Key(
                 [mod, "shift"],
                 str(i if i != 10 else 0),
@@ -170,8 +259,13 @@ for i, group in enumerate(groups, 1):
     )
 
 layouts = [
-        layout.Bsp(border_width=2,margin = 3,margin_on_single=False,border_focus=COLORS["pink"],),
-    # layout.Columns(border_focus_stack=[COLORS["purple"], COLORS["purple"]], border_width=2,margin = 3),
+    layout.Bsp(
+        border_width=2,
+        margin=3,
+        margin_on_single=False,
+        border_focus=COLORS["pink"],
+        ),
+    # layout.Columns(border_focus_stack=[, border_width=2,margin = 3),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -181,10 +275,10 @@ layouts = [
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    # layout.VerticalTile(), 
+    # layout.VerticalTile(),
 ]
 widget_defaults = dict(
-    font = 'Iosevka Fixed Semibold',
+    font='Iosevka Fixed Semibold',
     fontsize=13,
     padding=0,
 )
@@ -192,23 +286,22 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        top=bar.Bar(
-            [
-                widget.Spacer(length = 5),
+        top=bar.Bar([
+                widget.Spacer(length=5),
                 widget.GroupBox(
                     font="Ubuntu Mono",
                     highlight_method='text',
                     highlight_color=COLORS["black"],
-                    active = COLORS["white"],
+                    active=COLORS["white"],
                     this_current_screen_border=COLORS["yellow"],
                     other_screen_border=COLORS["pink"],
-                    padding = 5,
+                    padding=5,
                     fontsize=13,
                 ),
                 widget.TextBox(
                     text=POWERLINE_SYMBOL,
-                    foreground = COLORS["white"],
-                    background = COLORS["black"],
+                    foreground=COLORS["white"],
+                    background=COLORS["black"],
                     fontsize=30,
                 ),
                 widget.WindowName(
@@ -219,63 +312,88 @@ screens = [
                     ),
                 widget.TextBox(
                     text=POWERLINE_SYMBOL,
-                    foreground = COLORS["black"],
-                    background = COLORS["white"],
+                    foreground=COLORS["black"],
+                    background=COLORS["white"],
                     fontsize=30,
                 ),
-                widget.Systray(icon_size=15,padding=4,),
+                widget.Systray(
+                    icon_size=15,
+                    padding=4,
+                ),
                 widget.TextBox(
                     text=POWERLINE_SYMBOL,
-                    foreground = COLORS["white"],
-                    background = COLORS["black"],
+                    foreground=COLORS["white"],
+                    background=COLORS["black"],
                     fontsize=30,
                 ),
                 widget.Memory(
-                    background = COLORS["white"],
-                    foreground = COLORS["black"],
-                    format = 'Ram: {MemUsed: .0f}{mm}',
+                    background=COLORS["white"],
+                    foreground=COLORS["black"],
+                    format='Ram: {MemUsed: .0f}{mm}',
                     ),
                 widget.TextBox(
                     text=POWERLINE_SYMBOL,
-                    foreground = COLORS["pink"],
-                    background = COLORS["white"],
+                    foreground=COLORS["pink"],
+                    background=COLORS["white"],
                     fontsize=30,
                 ),
                 widget.ThermalSensor(
-                    fmt = 'Thermal:  {}',
-                    background = COLORS["pink"],
+                    fmt='Thermal:  {}',
+                    background=COLORS["pink"],
                     foreground=COLORS["black"],
                     fontsize=13,
                     padding=5,
                     ),
                 widget.TextBox(
                     text=POWERLINE_SYMBOL,
-                    foreground = COLORS["purple"],
-                    background = COLORS["pink"],
+                    foreground=COLORS["purple"],
+                    background=COLORS["pink"],
                     fontsize=30,
                 ),
-                widget.CPU(format="CPU {load_percent}%",background = COLORS["purple"],foreground = COLORS["black"],padding=3,),
+                widget.CPU(
+                    format="CPU {load_percent}%",
+                    background=COLORS["purple"],
+                    foreground=COLORS["black"],
+                    padding=3,
+                ),
                 widget.TextBox(
                     text=POWERLINE_SYMBOL,
-                    foreground = COLORS["yellow"],
-                    background = COLORS["purple"],
+                    foreground=COLORS["yellow"],
+                    background=COLORS["purple"],
                     fontsize=30,
                 ),
-                widget.Clock(format="%b %d - %I:%M %p",foreground = COLORS["black"], background = COLORS["yellow"],padding = 8),
+                widget.Clock(
+                    format="%b %d - %I:%M %p",
+                    foreground=COLORS["black"],
+                    background=COLORS["yellow"],
+                    padding=8
+                ),
             ],
             32,
-            background = COLORS["black"],
-            #border_width=[3, 2, 3, 2],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            background=COLORS["black"],
+            # border_width=[3, 2, 3, 2],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]
+            # Borders are magenta
         ),
     ),
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Drag(
+        [mod], "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+        ),
+    Drag(
+        [mod], "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size(),
+        ),
+    Click(
+        [mod], "Button2",
+        lazy.window.bring_to_front(),
+        ),
 ]
 
 dgroups_key_binder = None
@@ -285,7 +403,8 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
     float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
+        # Run the utility of `xprop` to see
+        # the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
@@ -302,10 +421,11 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 
+
 @hook.subscribe.startup_once
 def autostart():
-        home = os.path.expanduser('/home/santorar/.config/qtile/autostart.sh')
-        subprocess.run([home])
+    home = os.path.expanduser('/home/santorar/.config/qtile/autostart.sh')
+    subprocess.run([home])
 
 
 # If things like steam games want to auto-minimize themselves when losing
