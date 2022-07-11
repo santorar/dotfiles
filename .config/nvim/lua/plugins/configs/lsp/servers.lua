@@ -2,20 +2,14 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lsp = require 'lspconfig'
+local servers = {'html','cssls','emmet_ls','tsserver','pyright',}
 
+for _, server in ipairs(servers) do
+    lsp[server].setup{
+    capabilities = capabilities
+    }
+end
 
-lsp.cssls.setup {
-  capabilities = capabilities,
-}
-lsp.html.setup {
-  capabilities = capabilities,
-}
-lsp.tsserver.setup{
-	capabilities = capabilities,
-}
-lsp.pyright.setup{
-    capabilities = capabilities,
-}
 lsp.sumneko_lua.setup {
   settings = {
     Lua = {

@@ -15,6 +15,9 @@ return require('packer').startup(function()
   		},
 	}
 
+    -- Vin vsnip
+    use {'hrsh7th/vim-vsnip'}
+
     -- status bar
     use {'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
