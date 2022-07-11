@@ -34,4 +34,5 @@ bspc rule -a Screenkey manage=off
 
 /home/santorar/.config/polybar/launch.sh &
 redshift-gtk -l 4.25:-74.18333 &
+flameshot &
 spotify &
