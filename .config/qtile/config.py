@@ -70,6 +70,7 @@ keys = [
         lazy.layout.next(),
         desc="Move window focus to other window"
         ),
+
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h",
@@ -88,6 +89,7 @@ keys = [
         lazy.layout.shuffle_up(),
         desc="Move window up"
         ),
+
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h",
@@ -110,6 +112,7 @@ keys = [
         lazy.layout.normalize(),
         desc="Reset all window sizes"
         ),
+
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -164,6 +167,7 @@ keys = [
         lazy.spawn("i3lock-fancy"),
         desc="Locks the screen"
         ),
+
     # Volume
     Key([], "XF86AudioLowerVolume",
         lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
@@ -176,6 +180,7 @@ keys = [
         lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle"),
         desc="mute the audio"
         ),
+
     # Brightness
     Key([], "XF86MonBrightnessUp",
         lazy.spawn("brightnessctl set +10%"),
@@ -283,8 +288,8 @@ layouts = [
     # layout.VerticalTile(),
 ]
 widget_defaults = dict(
-    font='Iosevka Fixed Semibold',
-    fontsize=13,
+    font='Iosevka Medium Oblique',
+    fontsize=11.5,
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
@@ -292,89 +297,88 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=bar.Bar([
-            widget.Spacer(length=5),
-            widget.GroupBox(
-                font="Ubuntu Mono",
-                highlight_method='text',
-                highlight_color=COLORS["black"],
-                active=COLORS["white"],
-                this_current_screen_border=COLORS["yellow"],
-                other_screen_border=COLORS["pink"],
-                padding=5,
-                fontsize=13,
-            ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["white"],
-                background=COLORS["black"],
-                fontsize=30,
-            ),
-            widget.WindowName(
-                foreground=COLORS["black"],
-                parse_text=longNameParse,
-                padding=5,
-                background=COLORS["white"],
+                widget.Spacer(length=5),
+                widget.GroupBox(
+                    font="Ubuntu Mono",
+                    highlight_method='text',
+                    highlight_color=COLORS["black"],
+                    active=COLORS["white"],
+                    this_current_screen_border=COLORS["yellow"],
+                    other_screen_border=COLORS["pink"],
+                    padding=5,
+                    fontsize=11,
                 ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["black"],
-                background=COLORS["white"],
-                fontsize=30,
-            ),
-            widget.Systray(
-                icon_size=15,
-                padding=4,
-            ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["white"],
-                background=COLORS["black"],
-                fontsize=30,
-            ),
-            widget.Memory(
-                background=COLORS["white"],
-                foreground=COLORS["black"],
-                format='Ram: {MemUsed: .0f}{mm}',
+                widget.TextBox(
+                    text=POWERLINE_SYMBOL,
+                    foreground=COLORS["white"],
+                    background=COLORS["black"],
+                    fontsize=30,
                 ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["pink"],
-                background=COLORS["white"],
-                fontsize=30,
-            ),
-            widget.ThermalSensor(
-                fmt='Thermal:  {}',
-                background=COLORS["pink"],
-                foreground=COLORS["black"],
-                fontsize=13,
-                padding=5,
+                widget.WindowName(
+                    foreground=COLORS["black"],
+                    parse_text=longNameParse,
+                    padding=5,
+                    background=COLORS["white"],
+                    ),
+                widget.TextBox(
+                    text=POWERLINE_SYMBOL,
+                    foreground=COLORS["black"],
+                    background=COLORS["white"],
+                    fontsize=30,
                 ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["purple"],
-                background=COLORS["pink"],
-                fontsize=30,
-            ),
-            widget.CPU(
-                format="CPU {load_percent}%",
-                background=COLORS["purple"],
-                foreground=COLORS["black"],
-                padding=3,
-            ),
-            widget.TextBox(
-                text=POWERLINE_SYMBOL,
-                foreground=COLORS["yellow"],
-                background=COLORS["purple"],
-                fontsize=30,
-            ),
-            widget.Clock(
-                format="%b %d - %I:%M %p",
-                foreground=COLORS["black"],
-                background=COLORS["yellow"],
-                padding=8
-            ),
+                widget.Systray(
+                    icon_size=13,
+                    padding=4,
+                ),
+                widget.TextBox(
+                    text=POWERLINE_SYMBOL,
+                    foreground=COLORS["white"],
+                    background=COLORS["black"],
+                    fontsize=30,
+                ),
+                widget.Memory(
+                    background=COLORS["white"],
+                    foreground=COLORS["black"],
+                    format='Ram: {MemUsed: .0f}{mm}',
+                    ),
+                widget.TextBox(
+                    text=POWERLINE_SYMBOL,
+                    foreground=COLORS["pink"],
+                    background=COLORS["white"],
+                    fontsize=30,
+                ),
+                widget.ThermalSensor(
+                    fmt='Thermal:  {}',
+                    background=COLORS["pink"],
+                    foreground=COLORS["black"],
+                    padding=5,
+                    ),
+                widget.TextBox(
+                    text=POWERLINE_SYMBOL,
+                    foreground=COLORS["purple"],
+                    background=COLORS["pink"],
+                    fontsize=30,
+                ),
+                widget.CPU(
+                    format="CPU {load_percent}%",
+                    background=COLORS["purple"],
+                    foreground=COLORS["black"],
+                    padding=3,
+                ),
+                widget.TextBox(
+                    text=POWERLINE_SYMBOL,
+                    foreground=COLORS["yellow"],
+                    background=COLORS["purple"],
+                    fontsize=30,
+                ),
+                widget.Clock(
+                    format="%b %d - %I:%M %p",
+                    foreground=COLORS["black"],
+                    background=COLORS["yellow"],
+                    padding=8
+                ),
             ],
-            32,
+            25,
             background=COLORS["black"],
             # border_width=[3, 2, 3, 2],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]
@@ -429,7 +433,7 @@ reconfigure_screens = True
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('/home/santorar/.config/qtile/autostart.sh')
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.run([home])
 
 
