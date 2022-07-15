@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # exports
 export EDITOR="nvim"
@@ -99,8 +101,13 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # tmux attach
 alias ta='tmux attach'
-# yt-dlp
 
+# trash
+alias rm='rmtrash'
+alias rmdir='rmdirtrash'
+alias sudo='sudo '
+
+# yt-dlp
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
 alias yta-flac="yt-dlp --extract-audio --audio-format flac "
