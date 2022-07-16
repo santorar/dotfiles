@@ -31,7 +31,7 @@ super + a
 
 # opens brave
 super + b
-  brave
+  min
 
 #
 # bspwm hotkeys
