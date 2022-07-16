@@ -2,6 +2,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # exports
 export EDITOR="nvim"
@@ -91,9 +93,9 @@ alias fgrep="fgrep --color auto"
 
 # Miselaneous
 alias cat="bat"
-alias pacins="sudo pacman -Sy"
-alias pacupd="sudo pacman -Syyu"
-alias aurins="yay -S"
+alias install="sudo pacman -Sy"
+alias update="sudo pacman -Syyu"
+alias yayinstall="yay -S"
 alias pf="pfetch"
 
 # dotfiles

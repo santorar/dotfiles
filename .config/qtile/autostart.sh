@@ -5,4 +5,6 @@ picom --experimental-backends &
 nm-applet &
 xset r rate 200 30 &
 flameshot &
+parcellite &
+volumeicon &
 cbatticon &
