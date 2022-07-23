@@ -1,0 +1,15 @@
+#
+# wm independent hotkeys
+#
+
+# take a screenshot
+super + shift + a
+    flameshot gui
+
+# take a full screenshot
+super + a
+    flameshot full
+
+# opens brave
+super + b
+  brave
