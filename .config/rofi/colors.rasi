@@ -1,0 +1,21 @@
+/* colors */
+
+* {
+ bg:#181825;
+ bg1:#1e1e2e;
+ bg2:#313244;
+ bg3:#45475a;
+ fg:#cdd6f4;
+ fg1:#9399b2;
+ fg2:#bac2de;
+  red:#E74C3C;
+  orange:#D08770;
+  yellow:#EBCB8B;
+  magenta:#B48EAD;
+  cyan:#88C0D0;
+  blue:#81A1C1;
+  green:#A3BE8C;
+  transparent: #00000000;
+  gray:#6C7A89;
+  white:#cdd6f4;
+}
