@@ -1,0 +1,87 @@
+#!/bin/zsh
+# Aliases
+#
+# editors
+alias v="nvim"
+alias em="/usr/bin/emacs -nw"
+alias emacs="/usr/bin/emacsclient -c -a 'emacs'"
+alias emacsdaemon="/usr/bin/emacs --daemon"
+
+alias \
+	gg="lazygit" \
+	gcl="git clone" \
+	gc="git commit" \
+	ga="git add" \
+	gp="git push" \
+	gip="git pull" \
+alias zd="z"
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner"
+
+alias \
+	ka="killall" \
+	g="git" \
+	trem="transmission-remote" \
+	p="pacman" \
+	za="zathura"
+
+# doble dot
+alias ..="cd .."
+
+# Listing
+alias ls="lsd"
+alias ll="lsd -la"
+alias l="lsd -la"
+alias la="lsd -A"
+
+# Colorize grep output
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color auto"
+
+# Miselaneous
+alias cat="bat"
+alias install="sudo pacman -Sy"
+alias update="sudo pacman -Syyu"
+alias yayinstall="yay -S"
+alias pf="pfetch"
+alias fetch="nitch"
+alias anime="ani-cli"
+alias manga="manga-cli"
+alias movies="lobster"
+alias yt="ytfzf -t"
+
+# dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# tmux attach
+# alias ta='tmux attach'
+
+# trash
+alias sudo='sudo '
+
+# yt-dlp
+alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias yta-opus="yt-dlp --extract-audio --audio-format opus "
+alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
+alias yta-wav="yt-dlp --extract-audio --audio-format wav "
+alias ytv-best="yt-dlp -f 'bestvideo[height<=?1440]+bestaudio/best[height<=?1440]' "
+
+#video and image viwers
+alias mpv="devour mpv"
+alias sxiv="devour sxiv"
+
+#lf
+alias lf="lf-ueberzug"
+
+alias archvm="sudo podman exec -it -u santorar arch fish"
+alias javaproject="mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart"
+alias gpumonitor='watch -n 0.5 nvidia-smi'
