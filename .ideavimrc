@@ -1,0 +1,104 @@
+let mapleader = " "
+" Keybindings for buffer movement
+:nmap + <C-a> " Increment
+:nmap - <C-x> " Decrement
+:nmap <C-a> gg<S-v>G " Select all
+:nmap ss :split<CR><C-w>w " Split window
+:nmap sv :vs<CR><C-w>w " Split window vertically
+" Split movement
+:nmap <C-h> <C-w>h
+:nmap <C-j> <C-w>j
+:nmap <C-k> <C-w>k
+:nmap <C-l> <C-w>l
+:nmap <leader>bd :bd<cr>" Close Buffer
+" Tab Management
+:nmap <S-l> :bn<cr>
+:nmap <S-h> :bprev<CR>
+:nmap <leader>q <action>(CloseEditor)
+:nmap K <action>(QuickJavaDoc)
+" Error Handling
+:nmap gl <action>(ShowIntentionActions)
+:nmap gn <action>(GotoNextError)
+:nmap <leader>s <action>(QuickChangeScheme)
+" Git
+:nmap <leader>gg <action>(Git.Menu)
+:nmap <leader>ga <action>(Git.Add)
+:nmap <leader>gr <action>(Git.Revert)
+:nmap <leader>gi <action>(Git.Init)
+:nmap <leader>gl <action>(Git.Log)
+:nmap <leader>gR <action>(Git.Reset)
+:nmap <leader>gR <action>(Git.Reset)
+
+" Run project
+:nmap <leader>r <action>(Run)
+" Debugger
+:nmap <leader>dr <action>(Debug)
+:nmap <leader>db <action>(ToggleLineBreakpoint)
+:nmap <leader>di <action>(StepInto)
+:nmap <leader>do <action>(StepOut)
+:nmap <leader>dp <action>(RunToCursor)
+:nmap <leader>dt <action>(Stop)
+:nmap <leader>dc <action>(Resume)
+
+" Menus
+:nmap <leader>mf <action>(FileMenu)
+:nmap <leader>mr <action>(RunMenu)
+:nmap <leader>me <action>(EditMenu)
+:nmap <leader>mv <action>(ViewMenu)
+:nmap <leader>mc <action>(CodeMenu)
+:nmap <leader>ms <action>(RefactoringMenu)
+:nmap <leader>mt <action>(ToolsMenu)
+:nmap <leader>mw <action>(WindowMenu)
+:nmap <leader>mm <action>(MainMenu)
+:nmap <leader>mn <action>(OtherMenu)
+:nmap <leader>mg <action>(GoToMenu)
+:nmap <leader>mh <action>(HelpMenu)
+
+" Prompt
+:nmap <leader>p <action>(SearchEverywhere)
+
+:nmap <leader>fr <action>(RecentFiles)
+:nmap <leader>ff <action>(GotoFile)
+:nmap <leader>fc <action>(GotoClass)
+" New
+:nmap <leader>nf <action>(NewFile)
+:nmap <leader>nc <action>(NewClass)
+:nmap <leader>np <action>(NewProject)
+:nmap <leader>nd <action>(NewDir)
+" Movement into buffers
+:imap <C-h> <Left>
+:imap <C-j> <Down>
+:imap <C-k> <Up>
+:imap <C-l> <Right>
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
+:set clipboard=unnamed
+:set mouse=a
+:set scrolloff=8
+:set ignorecase=true
+
+set surround
+set NERDTree
+Plug 'tpope/vim-commentary'
+map <c-t>   :NERDTree<CR>
+
+set which-key
+set notimeout
+let g:WhichKey_ShowVimActions = "true"
+let g:WhichKeyDesc_menus = "<leader>m Menus"
+let g:WhichKeyDesc_prompt = "<leader>p Command Prompt"
+let g:WhichKeyDesc_buffer = "<leader>b Buffer"
+let g:WhichKeyDesc_debug = "<leader>d Debug"
+let g:WhichKeyDesc_git = "<leader>g Git"
+let g:WhichKeyDesc_file = "<leader>f Files"
+let g:WhichKeyDesc_new = "<leader>n New"
+let g:WhichKeyDesc_quit = "<leader>q Quit buffer"
+let g:WhichKeyDesc_run = "<leader>r Run Project"
+let g:WhichKeyDesc_scheme = "<leader>s Change Scheme"
+let g:NERDTreeMapActivateNode ='l'
+let g:NERDTreeMapJumpParent ='h'
