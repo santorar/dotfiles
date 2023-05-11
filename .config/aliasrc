@@ -85,3 +85,4 @@ alias lf="lf-ueberzug"
 alias archvm="sudo podman exec -it -u santorar arch fish"
 alias javaproject="mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart"
 alias gpumonitor='watch -n 0.5 nvidia-smi'
+alias ubuntu="distrobox enter ubuntu"
