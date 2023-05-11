@@ -11,7 +11,7 @@ super + Return
 
 # text editors and file manager
 super + e;{e,s,f,v}
-  {emacsclient -nc,emacs,nemo,alacritty -e nvim}
+  {emacsclient -nc,emacs,nemo,kitty -e nvim}
 
 # take a screenshot
 super + shift + a
@@ -34,25 +34,25 @@ super + W
 #
 #open bitwarden
 super + p
-  tdrop -n 1 -ma -w 70% -h 70% -y 15% -x 15% bitwarden-desktop
+  tdrop -n 1 -ma -w 70% -h 70% -y 15% -x 15% flatpak run com.bitwarden.desktop
 # open a terminal
 super + t
-  tdrop -n 1 -ma -w 70% -h 70% -y 15% -x 15% alacritty --class tfloat 
+  tdrop -n 1 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat 
 # open terminal spotify
 super + m
-  tdrop -n 2 -ma -w 70% -h 70% -y 15% -x 15% alacritty --class tfloat -e ncspot
+  tdrop -n 2 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e ncspot
 # open file browser
 super + f
-  tdrop -n 3 -ma -w 70% -h 70% -y 15% -x 15% alacritty --class tfloat -e ranger 
+  tdrop -n 3 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e ranger 
 #run youtube
 super + y
-  tdrop -n 4 -ma -w 70% -h 70% -y 15% -x 15% alacritty --class tfloat -e ytfzf -t
+  tdrop -n 4 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e ytfzf -t
 #run lobster
 super + Y
-  tdrop -n 5 -ma -w 70% -h 70% -y 15% -x 15% alacritty --class tfloat -e lobster
+  tdrop -n 5 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e lobster
 #open volume control
 super + shift + v
-  tdrop -n 6 -ma -w 70% -h 70% -y 15% -x 15% alacritty --class tfloat -e ncpamixer
+  tdrop -n 6 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e ncpamixer
 
 
 # make sxhkd reload its configuration files:
@@ -143,10 +143,10 @@ super + {_,shift + }c
 # music control
 # next and previous song
 super + bracket{left,right}
-	playerctl --player=ncspot {previous,next}
+	playerctl --player=spotify {previous,next}
 # play or pause current song
 super + backslash
-  playerctl --player=ncspot play-pause
+  playerctl --player=spotify play-pause
 
 
 # focus the last node/desktop
