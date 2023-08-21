@@ -23,7 +23,7 @@ super + a
 
 # opens brave
 super + b
-  google-chrome-stable
+  brave
 
 # wallpaper downloaders
 super + W
@@ -48,7 +48,7 @@ super + f
 super + y
   tdrop -n 4 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e ytfzf -t
 #run lobster
-super + Y
+super+ Y
   tdrop -n 5 -ma -w 70% -h 70% -y 15% -x 15% kitty --class tfloat -e lobster
 #open volume control
 super + shift + v
