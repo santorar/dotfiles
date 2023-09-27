@@ -1,8 +1,10 @@
+include ~/.config/kitty/mocha.conf
 font_family FantasqueSansM Nerd Font
 size 13
 background_opacity 0.85
-confirm_os_window_close 0
+
+
 # BEGIN_KITTY_THEME
-# Gruvbox Material Dark Hard
+# Desert Night
 include current-theme.conf
 # END_KITTY_THEME
